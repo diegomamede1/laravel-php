@@ -19,7 +19,6 @@ class PessoasController extends Controller
         return view('pessoas.index', [
             'Pessoas' => $Pessoas,
         ]);
-
     }
 
     /**
@@ -51,7 +50,6 @@ class PessoasController extends Controller
         Pessoas::create($request->all());
 
         return redirect()->back()->with('success', 'Pessoa cadastrada com sucesso!');
-
     }
 
     /**
@@ -73,7 +71,7 @@ class PessoasController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -94,8 +92,11 @@ class PessoasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Pessoa)
     {
-        //
+        // dd($Pessoa);
+        Pessoas::find($Pessoa)->delete();
+
+        return redirect()->back()->with('success', 'Item excluído com sucesso!');
     }
 }

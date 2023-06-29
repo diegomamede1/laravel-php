@@ -14,6 +14,7 @@
             <table class="table table-striped">
 
                 <tr>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>Endereco</th>
@@ -24,13 +25,21 @@
                 @foreach ($Pessoas as $Pessoa)
                     {{-- <a href="{{ route('pessoas.show', $Pessoa) }}"> --}}
                     <tr>
+                        <td>{{ $Pessoa->id }}</td>
                         <td>{{ $Pessoa->nome }}</td>
                         <td>{{ $Pessoa->sobrenome }}</td>
                         <td>{{ $Pessoa->endereco }}</td>
                         <td>{{ $Pessoa->telefone }}</td>
                         <td>{{ $Pessoa->cpf }}</td>
-                        <td><button class="btn btn-primary"> <i class="fa-solid fa-pen-ruler"></i> Editar</button>
-                            <button class="btn btn-danger"> <i class="fa-solid fa-trash-can"></i> Excluir</button>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('pessoas.edit', $Pessoa) }}">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                                Editar
+                            </a>
+                            <a class="btn btn-danger" href="{{ route('pessoas.destroy', $Pessoa) }}">
+                                <i class="fa-solid fa-trash-can"></i>
+                                Excluir
+                            </a>
                         </td>
                     </tr>
                 @endforeach

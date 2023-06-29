@@ -24,7 +24,8 @@ Route::get('pessoas/create', [PessoasController::class, "create"])->name('pessoa
 Route::post('pessoas/store', [PessoasController::class, "store"])->name('pessoas.store');
 Route::get('pessoas/index', [PessoasController::class, "index"])->name('pessoas.index');
 Route::get('pessoas/show', [PessoasController::class, "show"])->name('pessoas.show');
-
+Route::get('pessoas/destroy/{id}', [PessoasController::class, "destroy"])->name('pessoas.destroy');
+Route::get('pessoas/edit', [PessoasController::class, "edit"])->name('pessoas.edit');
 
 
 
