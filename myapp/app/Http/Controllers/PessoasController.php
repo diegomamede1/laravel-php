@@ -14,7 +14,7 @@ class PessoasController extends Controller
      */
     public function index()
     {
-        $Pessoas = Pessoas::all();
+        $Pessoas = Pessoas::paginate(10);
 
         return view('pessoas.index', [
             'Pessoas' => $Pessoas,
@@ -44,8 +44,8 @@ class PessoasController extends Controller
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
             'endereco' => 'required|string',
-            'telefone' => 'required|string',
-            'cpf' => 'required|integer',
+            'telefone' => 'required|integer|digits:11',
+            'cpf' => 'required|integer|digits:11',
         ]);
 
         Pessoas::create($request->all());
