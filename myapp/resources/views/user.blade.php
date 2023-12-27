@@ -1,5 +1,6 @@
 <h5>Usuarios</h5>
 
+<!-- 
 {{$user->name}} <br>
 {{$user->email}} <br> <hr>
 
@@ -15,3 +16,4 @@
 @elseif($numero < 100)
     ta menor
 @endif
+ -->
